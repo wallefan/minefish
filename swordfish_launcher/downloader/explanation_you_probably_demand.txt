@@ -1,0 +1,18 @@
+So.
+
+The Mojang API is a bit of a mess.  There are a kajillion separate servers: the authentication server, the metadata server,
+the status server, and the CDN are all separate domain names.  Now the CDN being separate from all the others I can see,
+and in the interest of security I can see wanting to keep auth separate from everybody else.  But tell me, what is the
+point of having a separate server with its own domain name for every single API function?
+
+Also -- this API isn't documented anywhere that I could find.  wiki.vg details the auth sequence and that's it.  The
+requests I'm making to lauchermeta.mojang.com, for example, were lifted directly from mc-launcher-lib.
+
+"Now Sean," you might be asking, "I heard you mention an existing Python library specifically for downloading and launching Minecraft.  It even has an interface that's directly compatible with your code, progress bars and all!  Why
+are you reinventing the wheel?"  And the answer is threefold: 1) I want to know how launching Minecraft works, 2) it's not COMPLETELY compatible with my progress bars since it only
+shows progress for each step, not how many steps there are, and 3) it uses Requests and I'm trying really
+hard to keep this to "no external libraries".  That's why I'm using Tkinter instead of luearning Pyqt.
+
+
+Another question I'm probably going to get a lot is "why are you allergic to urllib.request?  It's built in."  And the
+answer is I like having more control over things like headers and when the connection is closed.  Should I probably be using urllib anyway?  Yes.

@@ -1,0 +1,12 @@
+Things I know about the Curse fingerprint algorithm so far:
+
+ - The algorithm can be computed on either a file or directory.
+ - The result is an unsigned 32 bit integer.
+ - Computing the algorithm on two different files or directories with the same contents will return the same result.
+ - The algorithm is not CRC32, Adler32, or Fletcher32, or the result of any of these algorithms XORed with a fixed value.
+ - Hashing a directory with one file in it returns the same as hashing that file on its own.
+    - This would seem to imply that the algorithm does not take filenames into account.
+ - Hashing a directory with multiple files in it does NOT give the same result as concatenating the files and hashing that.
+    - I suspect the files are concatenated with a delimiter in between.
+
+ - I have decompiled the Curse client and discovered that the algorithm is MurmurHash2.

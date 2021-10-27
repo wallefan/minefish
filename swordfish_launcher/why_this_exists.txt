@@ -1,0 +1,9 @@
+
+
+
+
+Features:               CurseLauncher Vanilla Launcher    TechnicLauncher ATLauncher  MultiMC Minefish
+Download Curse packs    Yes           No                  no              yes         yes     yes
+Search Curse packs      Yes           No                  No              No          No      Yes
+Download Technic Packs  No            No                  Yes             No          No      Yes
+Download Technic Packs  No            No                  Yes             No          No      Yes
